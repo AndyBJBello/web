@@ -1,0 +1,464 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: rgb(255, 255, 255);
+    
+}
+
+.custom-navbar {
+    
+    width: 100%;
+    top: 0;
+    z-index: 1050;
+    transition: top 0.3s ease-in-out;
+    position: fixed;
+    
+}
+
+
+.nav-link-blue {
+    color: #007bff !important;
+}
+
+
+/* Estilos para el enlace de contacto */
+.contact-link {
+    padding: 9px;
+    
+    border-radius: 50px; /* Borde redondeado */
+    /* Color de fondo*/
+    color: #5c5c5c;
+    font-weight: bold;
+    /* text-align: center; */
+    /* text-decoration: none; */
+    display: inline-block; /* Para que respete el padding como un botón */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Efecto hover para cambiar el color */
+.contact-link:hover {
+    
+    color: #000000;
+    background-color: #17a2b8;
+}
+
+.contact-link:active {
+    outline: none;
+    box-shadow: none;
+    background-color: #0056b3; /* Color de fondo cuando se hace clic */
+    color: white; /* Color de texto */
+}
+
+
+button.btn-primary:focus, button.btn-primary:active {
+    outline: none;
+    box-shadow: none;
+}
+
+button.btn-primary {
+    display: inline-block;
+}
+
+
+/* Estilos para el contenedor principal */
+/* Estilos para el contenedor principal */
+.presentation-container {
+    background-color: #3498db; /* Fondo blanco */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    padding: 5rem 2rem;
+    position: relative;
+    overflow: hidden;
+    gap: 2rem;
+}
+
+.presentation-container .content {
+    text-align: left;
+    flex: 1;
+    z-index: 2; /* Aseguramos que el contenido esté encima del SVG */
+}
+/* titulos y parrafos */
+.presentation-container h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.presentation-container p {
+    font-size: 1.2rem;
+    color: #413939;
+    margin-bottom: 2rem;
+}
+
+.presentation-container .contact-button {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.presentation-container .contact-button:hover {
+    background-color: #0056b3;
+    color: #ffffff;
+}
+
+.presentation-container .image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 2; /*la imagen esta sobre el SVG */
+}
+/* contenedor de la imagen */
+.presentation-container .image-container img {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    border-radius: 24px;
+}
+
+/* Contenedor SVG en la parte inferior */
+.presentation-container .svg-container {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1; /* SVG por detrás de los demás elementos */
+}
+
+.presentation-container .svg-container svg {
+    width: 100%;
+    height: auto;
+    
+}
+
+.svg-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.wave-svg path {
+    animation: waveAnimation 8s infinite ease-in-out;
+}
+
+/* SVG MOVILE */
+.presentation-container .svg-container-mobile {
+    display: none; /* Ocultaremos por defecto */
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+.presentation-container .svg-container-mobile svg {
+    width: 100%;
+    height: auto;
+    display: inline-block;
+}
+
+
+
+
+/* Media Query para dispositivos móviles */
+@media (max-width: 991px) {
+    .presentation-container {
+        flex-direction: column;
+        padding: 3rem 2rem;
+    }
+
+    .presentation-container .content {
+        text-align: center;
+    }
+
+    .presentation-container .image-container {
+        display: none; /* Ocultaremos la imagen en pantallas móviles */
+    }
+
+    .presentation-container .contact-button {
+        width: 40%;
+    }
+    
+    /* Ocultaremos SVG animado en móviles */
+    .svg-container {
+        display: none; /* Oculta el SVG animado */
+    }
+
+    /* Mostrar SVG estático en móviles */
+    .presentation-container .svg-container-mobile{
+        display: block; /* Muestra el SVG estático */
+    }
+}
+
+
+@keyframes waveAnimation {
+    0%, 100% {
+        d: path("M0,288L120,293.3C240,299,480,309,720,266.7C960,224,1200,128,1320,80L1440,32L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z");
+    }
+    50% {
+        d: path("M0,300L120,280C240,260,480,320,720,280C960,240,1200,160,1320,100L1440,60L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z");
+    }
+}
+
+
+
+/* Ajustes para la sección de Nosotros */
+#nosotros {
+    padding: 20px 15px;
+    background-color: #f9f9f9;
+}
+
+#nosotros h2 {
+    font-size: 2.5rem;
+    color: #333;
+}
+#nosotros h3 {
+    border-bottom: 2px solid #3498db; /* Línea debajo del título */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+#nosotros ul li {
+    margin-bottom: 10px;
+}
+
+#nosotros p, #nosotros li {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+#nosotros ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#nosotros li {
+    margin-bottom: 10px;
+}
+
+
+/* Estilo para el título sin la línea azul */
+.titulo {
+    font-weight: bold !important;
+    font-size: 1.5rem;
+    color: #007bff; /* Cambia el color según tu diseño */
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    border-bottom: none !important;
+}
+
+/* Ajustes adicionales para la tarjeta */
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un look más profesional */
+    border-radius: 8px; /* Bordes redondeados */
+    background-color: #fff; /* Fondo blanco */
+}
+
+
+
+
+.descripcion, .descripcion li  {
+    color: #6c757d !important; /* Color de texto gris */
+}
+
+
+.descripcion li {
+    position: relative;
+    font-size: 1rem;
+    color: #666;
+    padding-left: 10px; /* Espacio para el símbolo */
+}
+
+.descripcion li::before {
+    content: "•"; /* Cambiar el símbolo si prefieres el '°' */
+    color: #007bff; /* Color del punto, ajústalo según tu diseño */
+    font-size: 1rem; /* Ajusta el tamaño del símbolo según tu necesidad */
+    margin-right: 0.2rem; /* Espaciado entre el símbolo y el texto */
+    display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+/* animacion de contenido // oculta el contenido y lo desplaza hacia abajo */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Cuando el contenido está visible en el viewport */
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.fas {
+    color: #3498db;
+    padding: 5px;
+}
+
+
+.professional-card {
+    padding: 20px;
+    margin: 12px;
+    border-radius: 10px;
+    background-color: #3498db;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.professional-card:hover {
+    transform: translateY(-5px);
+}
+
+.professional-card h3 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+
+
+
+.professional-card p{
+    font-size: 1rem;
+    color: #ffffff !important;
+    line-height: 1.6;
+}
+
+/* Diseño servicios */
+
+
+#servicios h2 {
+    font-size: 2.5rem;
+    color: #333; /* negro */
+    margin-bottom: 20px;
+}
+
+#servicios p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.service-card {
+    padding: 30px;
+    background: linear-gradient(135deg, #e9f2ff, #ffffff); /* Gradiente suave */
+    
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-icon {
+    position: absolute;
+    top: -25px;
+    left: 20px;
+    font-size: 40px;
+    color: #007bff;
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.service-card h3 {
+    font-size: 1.8rem;
+    color: #003366;
+    margin-top: 40px;
+}
+
+.service-card p {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.service-card ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.service-card ul li {
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+    color: #555;
+}
+
+
+
+.hidden-navbar {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+}
+
+
+
+
+footer img {
+    margin-bottom: 15px; /* Espacio bajo el logotipo */
+}
+
+footer p {
+    color: #ffffff; /* Texto ligeramente oscuro */
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+
+a.btn-outline-dark {
+    color: #ffffff; /* Color inicial del ícono */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Transición suave */
+   
+}
+
+a.btn-outline-dark:hover {
+    color: #ffffff !important; /* Cambia el color del ícono al azul al pasar el mouse */
+    background-color: #3498db !important;
+}
+
+.social-icons {
+    margin: -10px 0px 10px 0px;
+}
+.text-center {
+    border-radius: 20px !important;
+}
+@media (max-width: 991.98px) {
+    .navbar-nav .nav-link {
+        margin-left: 10px; /* margen hacia la izquierda  */
+         
+    }
+}
+
+@media (max-width: 768px) {
+    .service-card {
+        margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .service-icon {
+        top: -20px;
+        font-size: 30px;
+    }
+}
